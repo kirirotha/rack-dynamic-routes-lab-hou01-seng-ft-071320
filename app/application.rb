@@ -10,13 +10,13 @@ class Application
       item_name = req.path.split("/items/").last
       item = @@items.find{ |m| m.name = item_name}
       binding.pry
-      
+
       if @@items.include?(item)
-        resp.status = 400
-        resp.write "Item not found"
-      else
         resp.write item.price
         resp.status = 200
+      else
+        resp.status = 400
+        resp.write "Item not found"
       end
     else
       resp.write "Route not found"
