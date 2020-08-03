@@ -7,7 +7,7 @@ class Application
     req = Rack::Request.new(env)
 
      this_thing = req.params["item"]
-    
+
     if req.path.match(/items/this_thing.name})
         resp.write "#{this_thing.price}\n"
         resp.status 200
