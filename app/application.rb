@@ -1,6 +1,6 @@
 #require_relative './item.rb'
 
-class application
+class Application
 
   def call(env)
     resp = Rack::Response.new
