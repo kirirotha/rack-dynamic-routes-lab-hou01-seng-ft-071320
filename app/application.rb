@@ -6,11 +6,11 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-     this_thing = req.params["item"]
 
-    if req.path.match(/items/<this_thing.name>)
-        resp.write "#{this_thing.price}\n"
-        resp.status 200
+    if req.path.match(/items/)
+      item_name = req.path.split("/items/").last
+      item = @@items.find{ |m| m.name = item_name}
+      resp.write item.price 
     else
       resp.write "Path not found"
       resp.status = 404
