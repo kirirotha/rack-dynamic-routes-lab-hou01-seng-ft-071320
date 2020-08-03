@@ -15,7 +15,7 @@ class Application
       resp.write "Path not found"
       resp.status = 404
     end
-    #binding.pry
+    binding.pry
     resp.finish
   end
 
