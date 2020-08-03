@@ -1,4 +1,3 @@
-require_relative './item.rb'
 require 'pry'
 class Application
 
@@ -16,6 +15,7 @@ class Application
       resp.write "Path not found"
       resp.status = 404
     end
+    binding.pry
   end
 
 
