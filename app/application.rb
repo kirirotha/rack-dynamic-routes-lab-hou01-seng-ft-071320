@@ -10,7 +10,8 @@ class Application
       item_name = req.path.split("/items/").last
       item = @@items.find{ |m| m.name = item_name}
       binding.pry
-      if item == nil
+      
+      if @@items.include?(item)
         resp.status = 400
         resp.write "Item not found"
       else
